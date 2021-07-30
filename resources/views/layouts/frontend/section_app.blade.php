@@ -50,7 +50,7 @@
             <hr class="space" />
             <div class="row">
                 <div class="col-md-6 ">
-                    {{-- This section should be gotten from the db --}}
+                    {{-- This section should be gotten from the db & title should be a turnery operator  --}}
                     <h2 class="text-black text-xl anima">{{ $title }} </h2> 
                     <hr class="space s" />
                     <p class="anima">

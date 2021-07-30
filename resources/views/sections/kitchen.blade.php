@@ -3,4 +3,5 @@
 
 
 @section('section')
+{{-- collect data from kitchen table & expend here  --}}
 @endsection

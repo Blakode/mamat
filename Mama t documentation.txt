@@ -1,0 +1,10 @@
+﻿	DOCUMENTATION MAMA T FOOD ORDERING WEB / MOBILE APP
+
+* The css, js  was bundled from assets folder
+
+* The database construct.  
+
+- the model for database is a formal food order based model with a tweak of delivery as another UI. 
+The Model For each table can be found in the migrations tables. 
+
+
