@@ -1,0 +1,1 @@
+- load page send an arrat of data throught the controller . 
