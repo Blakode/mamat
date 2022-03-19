@@ -20,16 +20,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index', ]); 
-Route::get('/kitchen', [KitchenController::class, 'index']);
+// Route::get('menu/{slug}', [MenuController::class, 'index']); 
+// Route::get('about/{slug}', [AboutController::class, 'index']);
+// Route::get('contact/{slug}', [ContactController::class, 'index']);
+// Route::get('product/{slug}', [ProductController::class, 'index']); 
 
-// Route::get('kitchen/{slug}', [KitchenController::class, 'index']); 
-Route::get('menu/{slug}', [MenuController::class, 'index']); 
-Route::get('about/{slug}', [AboutController::class, 'index']);
-Route::get('contact/{slug}', [ContactController::class, 'index']);
-Route::get('product/{slug}', [ProductController::class, 'index']); 
+// Route::resource('/kitchen', KitchenController::class); 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

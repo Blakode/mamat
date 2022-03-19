@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class KitchenController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class KitchenController extends Controller
      */
     public function index()
     {
-        return view('sections.kitchen');
+        //
     }
 
     /**
@@ -23,7 +23,7 @@ class KitchenController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -32,11 +32,10 @@ class KitchenController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(){
-
+    public function store(Request $request)
+    {
+        //
     }
-
-    
 
     /**
      * Display the specified resource.
@@ -82,8 +81,4 @@ class KitchenController extends Controller
     {
         //
     }
-
-
-
-    //use slug to get catagory type 
 }

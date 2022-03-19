@@ -13,15 +13,35 @@ class CreateKitchensTable extends Migration
      */
     public function up()
     {
-        Schema::create('kitchens', function (Blueprint $table) {
+        Schema::create('food', function (Blueprint $table) {
             // $table->id();
-            $table->id('ItemID'); 
-            $table->string('ItemDescription');
-            $table->string('ItemName');
-            $table->string('ItemCategory');
+            $table->increments('id'); 
+            $table->string('title');
+            $table->string('description');
+            $table->string('quantity');
+            $table->string('category');
             $table->double('price');
             $table->boolean('status');
             $table->timestamps();
+            $table->string('image_path'); 
+        });
+
+
+    //     Schema::create('category', function(Blueprint $table){
+    //         $table->string('food');
+    //         $table->string('drinks');
+    //  }); 
+
+     Schema::create('drinks', function(Blueprint $table){
+        $table->increments('id'); 
+        $table->string('title');
+        $table->string('description'); 
+        $table->string('quantity');
+        $table->float('price'); 
+        $table->double('units');
+        $table->timestamps(); 
+        $table->string('customs')->nullable; 
+        
         });
     }
    
@@ -34,6 +54,6 @@ class CreateKitchensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kitchens');
+        Schema::dropIfExists('kitchens', 'drinks');
     }
 }

@@ -6,9 +6,10 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="/">
-                    <img class="logo-default scroll-hide" src="{{asset('assets/images/logo.png')}}" alt="logo" /> <!--logo types for b & w  -bg-->
-                    <img class="logo-default scroll-show" src="{{asset('assets/images/logo-2.png')}}" alt="logo" />
-                    <img class="logo-retina" src="http://templates.framework-y.com/gourmet/images/logo-retina.png" alt="logo" />
+                    <img class="logo-default scroll-hide" src="{{asset('storage/images/logo.png')}}" alt="logo" /> <!--logo types for b & w  -bg-->
+                    <img class="logo-default scroll-show" src="{{asset('storage/images/logo-2.png')}}" alt="logo" />
+
+                    <img class="logo-retina" src="{{asset('storage/images/logo-2.png')}}" alt="logo" />
                 </a>
             </div>
 
@@ -16,11 +17,7 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">Kitchen<span class="caret"></span></a>
-                            <ul class="dropdown-menu multi-level">
-                                <li><a href="{{ url('kitchen/food') }}">Food</a></li>
-                                <li><a href="{{ url('kitchen/drinks') }}">Drinks</a></li>
-                            </ul>
+                        <a href="/kitchen" class="dropdown-toggle" data-toggle="dropdown" role="button">Kitchen<span class="caret"></span></a>
                     </li>
 
 
@@ -205,7 +202,7 @@
                         <div class="shop-menu">
                             <ul class="shop-cart">
                                 <li class="cart-item">
-                                    <img src="{{asset('assets/images/gallery/pizza-1.jpg')}}" alt="">
+                                    <img src="{{asset('storage/images/gallery/pizza-1.jpg')}}" alt="">
                                     <div class="cart-content">
                                         <h5>Wood Airplain</h5>
                                         <span class="cart-quantity">
@@ -233,9 +230,9 @@
                     </div>
                     <ul class="nav navbar-nav lan-menu">
                         <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="{{asset('assets/images/en.png')}}" alt="" />En<span class="caret"></span></a>
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="{{asset('storage/images/en.png')}}" alt="" />En<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0);"><img src="{{asset('assets/images/it.png')}}" alt="" />IT</a></li>
+                                <li><a href="javascript:void(0);"><img src="{{asset('storage/images/it.png')}}" alt="" />IT</a></li>
                             </ul>
                         </li>
                     </ul>

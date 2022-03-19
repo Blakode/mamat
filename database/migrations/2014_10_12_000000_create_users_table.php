@@ -29,6 +29,21 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             
         });
+
+
+        Schema::create('admin', function(Blueprint $table){
+
+            $table->id();
+            $table->string('uname');
+            $table->string('fname');
+            $table->string('lname');
+            $table->string('type_id')->primary();
+            $table->longtext('password');
+            $table->timestamp('last_login'); 
+            $table->timestamps(); 
+
+
+        }); 
     }
 
     /**

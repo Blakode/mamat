@@ -1,7 +1,7 @@
         @extends('layouts.frontend.main_app')
 
         @section('bg-banner')
-            <div class="section-bg-animation header-animation" style="background-image:url('{{asset('assets/images/bg-22.jpg')}}');"> <!-- home wallpaper -->
+            <div class="section-bg-animation header-animation" style="background-image:url('{{asset('storage/images/bg-22.jpg')}}');"> <!-- home wallpaper -->
                 <div id="anima-layer-a" class="anima-layer clouds-1"></div>
                 <div id="anima-layer-b" class="anima-layer clouds-2"></div>
                 <div class="container content overlay-content white">
@@ -31,67 +31,6 @@
         @section('section')
 
 
-                <!--optional contents commented out -->
-                <!-- <div class="section-bg-color">
-                    <div class="container content">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="advs-box advs-box-side-icon" data-anima="scale-up" data-trigger="hover">
-                                    <div class="icon-box">
-                                        <i class="im-fire-flame icon anima"></i>
-                                    </div>
-                                    <div class="caption-box">
-                                        <h3>Original barbeque</h3>
-                                        <p>
-                                            Eleifend quod do nostrum fermentum reprehenderito mato.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="advs-box advs-box-side-icon" data-anima="scale-up" data-trigger="hover">
-                                    <div class="icon-box">
-                                        <i class="im-diploma-2 icon anima"></i>
-                                    </div>
-                                    <div class="caption-box">
-                                        <h3>Starred cooks</h3>
-                                        <p>
-                                            Odit eleifend quod do nostrum fermentum reprehenderito.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="advs-box advs-box-side-icon" data-anima="scale-up" data-trigger="hover">
-                                    <div class="icon-box">
-                                        <i class="im-alarm icon anima"></i>
-                                    </div>
-                                    <div class="caption-box">
-                                        <h3>Open all week</h3>
-                                        <p>
-                                            Maleifend quod do nostrum fermentum repreherito mato.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="advs-box advs-box-side-icon" data-anima="scale-up" data-trigger="hover">
-                                    <div class="icon-box">
-                                        <i class="im-guitar icon anima"></i>
-                                    </div>
-                                    <div class="caption-box">
-                                        <h3>Country music</h3>
-                                        <p>
-                                            Fermentum repre henderit inim solli citudin maopro.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-
                 <div class="section-empty">
                     <div class="container content">
                         <div class="row">
@@ -114,11 +53,11 @@
                             <div class="grid-box row">
                                 <div class="grid-item col-md-4">
                                     <div class="img-box adv-img adv-img-down-text">
-                                        <a class="img-box img-scale-up lightbox i-center" href="{{asset('assets/images/gallery/image-31.jpg')}}">
+                                        <a class="img-box img-scale-up lightbox i-center" href="{{asset('storage/images/gallery/image-31.jpg')}}">
                                             <div class="caption">
                                                 <i class="im-fire-flame"></i>
                                             </div>
-                                            <img src="{{asset('assets/images/gallery/image-31.jpg')}}" alt="" />
+                                            <img src="{{asset('storage/images/gallery/image-31.jpg')}}" alt="" />
                                         </a>
                                         <div class="caption-bottom">
                                             <h2><a href="javascript:void(0);">Grilled Hamburgers</a></h2>
@@ -129,11 +68,11 @@
                                 </div>
                                 <div class="grid-item col-md-4">
                                     <div class="img-box adv-img adv-img-down-text">
-                                        <a class="img-box img-scale-up lightbox i-center" href="{{asset('assets/images/gallery/image-31.jpg')}}">
+                                        <a class="img-box img-scale-up lightbox i-center" href="{{asset('storage/images/gallery/image-31.jpg')}}">
                                             <div class="caption">
                                                 <i class="im-fire-flame"></i>
                                             </div>
-                                            <img src="{{asset('assets/images/gallery/image-32.jpg')}}" alt="" />
+                                            <img src="{{asset('storage/images/gallery/image-32.jpg')}}" alt="" />
                                         </a>
                                         <div class="caption-bottom">
                                             <h2><a href="javascript:void(0);">Shinbone beef</a></h2>
@@ -144,11 +83,11 @@
                                 </div>
                                 <div class="grid-item col-md-4">
                                     <div class="img-box adv-img adv-img-down-text">
-                                        <a class="img-box img-scale-up lightbox i-center" href="{{asset('assets/images/gallery/image-31.jpg')}}">
+                                        <a class="img-box img-scale-up lightbox i-center" href="{{asset('storage/images/gallery/image-31.jpg')}}">
                                             <div class="caption">
                                                 <i class="im-fire-flame"></i>
                                             </div>
-                                            <img src="{{asset('assets/images/gallery/image-33.jpg')}}" alt="" />
+                                            <img src="{{asset('storage/images/gallery/image-33.jpg')}}" alt="" />
                                         </a>
                                         <div class="caption-bottom">
                                             <h2><a href="javascript:void(0);">Grilled skewers</a></h2>
@@ -159,11 +98,11 @@
                                 </div>
                                 <div class="grid-item col-md-4">
                                     <div class="img-box adv-img adv-img-down-text">
-                                        <a class="img-box img-scale-up lightbox i-center" href="{{asset('assets/images/gallery/image-31.jpg')}}">
+                                        <a class="img-box img-scale-up lightbox i-center" href="{{asset('storage/images/gallery/image-31.jpg')}}">
                                             <div class="caption">
                                                 <i class="im-fire-flame"></i>
                                             </div>
-                                            <img src="{{asset('assets/images/gallery/image-34.jpg')}}" alt="" />
+                                            <img src="{{asset('storage/images/gallery/image-34.jpg')}}" alt="" />
                                         </a>
                                         <div class="caption-bottom">
                                             <h2><a href="javascript:void(0);">Steak and chips</a></h2>
@@ -174,11 +113,11 @@
                                 </div>
                                 <div class="grid-item col-md-4">
                                     <div class="img-box adv-img adv-img-down-text">
-                                        <a class="img-box img-scale-up lightbox i-center" href="{{asset('assets/images/gallery/image-31.jpg')}}">
+                                        <a class="img-box img-scale-up lightbox i-center" href="{{asset('storage/images/gallery/image-31.jpg')}}">
                                             <div class="caption">
                                                 <i class="im-fire-flame"></i>
                                             </div>
-                                            <img src="{{asset('assets/images/gallery/image-35.jpg')}}" alt="" />
+                                            <img src="{{asset('storage/images/gallery/image-35.jpg')}}" alt="" />
                                         </a>
                                         <div class="caption-bottom">
                                             <h2><a href="javascript:void(0);">Skewers of meat</a></h2>
@@ -189,11 +128,11 @@
                                 </div>
                                 <div class="grid-item col-md-4">
                                     <div class="img-box adv-img adv-img-down-text">
-                                        <a class="img-box img-scale-up lightbox i-center" href="{{asset('assets/images/gallery/image-31.jpg')}}">
+                                        <a class="img-box img-scale-up lightbox i-center" href="{{asset('storage/images/gallery/image-31.jpg')}}">
                                             <div class="caption">
                                                 <i class="im-fire-flame"></i>
                                             </div>
-                                            <img src="{{asset('assets/images/gallery/image-36.jpg')}}" alt="" />
+                                            <img src="{{asset('storage/images/gallery/image-36.jpg')}}" alt="" />
                                         </a>
                                         <div class="caption-bottom">
                                             <h2><a href="javascript:void(0);">Pork beef</a></h2>
@@ -208,7 +147,7 @@
                 </div>
 
 
-                <div class="section-bg-image parallax-window text-center white" data-natural-height="850" data-natural-width="1920" data-parallax="scroll" data-image-src="{{asset('assets/images/bg-23.jpg')}}">
+                <div class="section-bg-image parallax-window text-center white" data-natural-height="850" data-natural-width="1920" data-parallax="scroll" data-image-src="{{asset('storage/images/bg-23.jpg')}}">
                     <div class="container content">
                         <hr class="space" />
                         <div class="row">
@@ -419,14 +358,14 @@
 
                             </div>
                             <div class="col-md-5">
-                                <img src="{{asset('assets/images/food-6.jpg')}}" class="abs-image hidden-sm" alt="" />
+                                <img src="{{asset('storage/images/food-6.jpg')}}" class="abs-image hidden-sm" alt="" />
                             </div>
                         </div>
                         <hr class="space" />
 
                         <div class="row">
                             <div class="col-md-5">
-                                <img src="{{asset('assets/images/food-7.jpg')}}" class="abs-image hidden-sm" alt="" />
+                                <img src="{{asset('storage/images/food-7.jpg')}}" class="abs-image hidden-sm" alt="" />
                             </div>
                             <div class="col-md-7">
                                 <hr class="space m" />
@@ -556,7 +495,7 @@
                 </div>
 
 
-                <div class="section-bg-image parallax-window white" data-natural-height="850" data-natural-width="1920" data-parallax="scroll" data-image-src="{{asset('assets/images/bg-30.jpg')}}">
+                <div class="section-bg-image parallax-window white" data-natural-height="850" data-natural-width="1920" data-parallax="scroll" data-image-src="{{asset('storage/images/bg-30.jpg')}}">
                     <div class="container content">
                         <div class="row">
                             <div class="col-md-10 col-center">
@@ -571,7 +510,7 @@
                                             <div class="img-box adv-img adv-img-half-content row-12" data-anima="fade-left" data-trigger="hover">
                                                 <i class="fa fa-camera-retro anima"></i>
                                                 <a href="javascript:void(0);" class="img-box lightbox anima-scale-up anima">
-                                                    <img src="{{asset('assets/images/gallery/image-31.jpg')}}" alt="" />
+                                                    <img src="{{asset('storage/images/gallery/image-31.jpg')}}" alt="" />
                                                 </a>
                                                 <div class="caption">
                                                     <h2>Grilled Hamburgers</h2>
@@ -587,7 +526,7 @@
                                             <div class="img-box adv-img adv-img-half-content row-12" data-anima="fade-left" data-trigger="hover">
                                                 <i class="fa fa-camera-retro anima"></i>
                                                 <a href="javascript:void(0);" class="img-box lightbox anima-scale-up anima">
-                                                    <img src="{{asset('assets/images/gallery/image-32.jpg')}}" alt="" />
+                                                    <img src="{{asset('storage/images/gallery/image-32.jpg')}}" alt="" />
                                                 </a>
                                                 <div class="caption">
                                                     <h2>Shinbone beef</h2>
@@ -603,7 +542,7 @@
                                             <div class="img-box adv-img adv-img-half-content row-12" data-anima="fade-left" data-trigger="hover">
                                                 <i class="fa fa-camera-retro anima"></i>
                                                 <a href="javascript:void(0);" class="img-box lightbox anima-scale-up anima">
-                                                    <img src="{{asset('assets/images/gallery/image-33.jpg')}}" alt="" />
+                                                    <img src="{{asset('storage/images/gallery/image-33.jpg')}}" alt="" />
                                                 </a>
                                                 <div class="caption">
                                                     <h2>Grilled skewers</h2>
@@ -619,7 +558,7 @@
                                             <div class="img-box adv-img adv-img-half-content row-12" data-anima="fade-left" data-trigger="hover">
                                                 <i class="fa fa-camera-retro anima"></i>
                                                 <a href="javascript:void(0);" class="img-box lightbox anima-scale-up anima">
-                                                    <img src="{{asset('assets/images/gallery/image-34.jpg')}}" alt="" />
+                                                    <img src="{{asset('storage/images/gallery/image-34.jpg')}}" alt="" />
                                                 </a>
                                                 <div class="caption">
                                                     <h2>Steak and chips</h2>
@@ -635,7 +574,7 @@
                                             <div class="img-box adv-img adv-img-half-content row-12" data-anima="fade-left" data-trigger="hover">
                                                 <i class="fa fa-camera-retro anima"></i>
                                                 <a href="javascript:void(0);" class="img-box lightbox anima-scale-up anima">
-                                                    <img src="{{asset('assets/images/gallery/image-35.jpg')}}" alt="" />
+                                                    <img src="{{asset('storage/images/gallery/image-35.jpg')}}" alt="" />
                                                 </a>
                                                 <div class="caption">
                                                     <h2>Skewers of meat</h2>
@@ -651,7 +590,7 @@
                                             <div class="img-box adv-img adv-img-half-content row-12" data-anima="fade-left" data-trigger="hover">
                                                 <i class="fa fa-camera-retro anima"></i>
                                                 <a href="javascript:void(0);" class="img-box lightbox anima-scale-up anima">
-                                                    <img src="{{asset('assets/images/gallery/image-36.jpg')}}" alt="" />
+                                                    <img src="{{asset('storage/images/gallery/image-36.jpg')}}" alt="" />
                                                 </a>
                                                 <div class="caption">
                                                     <h2>Pork beef</h2>
@@ -678,7 +617,7 @@
                                     <div class="img-box adv-img adv-img-half-content" data-anima="fade-left" data-trigger="hover">
                                         <i class="fa fa-camera-retro anima"></i>
                                         <a href="javascript:void(0);" class="img-box lightbox anima-scale-up anima">
-                                            <img src="{{asset('assets/images/gallery/image-31.jpg')}}" alt="" />
+                                            <img src="{{asset('storage/images/gallery/image-31.jpg')}}" alt="" />
                                         </a>
                                         <div class="caption">
                                             <h2>Grilled Hamburgers</h2>
@@ -694,7 +633,7 @@
                                     <div class="img-box adv-img adv-img-half-content" data-anima="fade-left" data-trigger="hover">
                                         <i class="fa fa-camera-retro anima"></i>
                                         <a href="javascript:void(0);" class="img-box lightbox anima-scale-up anima">
-                                            <img src="{{asset('assets/images/gallery/image-32.jpg')}}" alt="" />
+                                            <img src="{{asset('storage/images/gallery/image-32.jpg')}}" alt="" />
                                         </a>
                                         <div class="caption">
                                             <h2>Shinbone beef</h2>
@@ -710,7 +649,7 @@
                                     <div class="img-box adv-img adv-img-half-content " data-anima="fade-left" data-trigger="hover">
                                         <i class="fa fa-camera-retro anima"></i>
                                         <a href="javascript:void(0);" class="img-box lightbox anima-scale-up anima">
-                                            <img src="{{asset('assets/images/gallery/image-33.jpg')}}" alt="" />
+                                            <img src="{{asset('storage/images/gallery/image-33.jpg')}}" alt="" />
                                         </a>
                                         <div class="caption">
                                             <h2>Grilled skewers</h2>
@@ -726,7 +665,7 @@
                                     <div class="img-box adv-img adv-img-half-content" data-anima="fade-left" data-trigger="hover">
                                         <i class="fa fa-camera-retro anima"></i>
                                         <a href="javascript:void(0);" class="img-box lightbox anima-scale-up anima">
-                                            <img src="{{asset('assets/images/gallery/image-34.jpg')}}" alt="" />
+                                            <img src="{{asset('storage/images/gallery/image-34.jpg')}}" alt="" />
                                         </a>
                                         <div class="caption">
                                             <h2>Steak and chips</h2>
@@ -742,7 +681,7 @@
                                     <div class="img-box adv-img adv-img-half-content" data-anima="fade-left" data-trigger="hover">
                                         <i class="fa fa-camera-retro anima"></i>
                                         <a href="javascript:void(0);" class="img-box lightbox anima-scale-up anima">
-                                            <img src="{{asset('assets/images/gallery/image-35.jpg')}}" alt="" />
+                                            <img src="{{asset('storage/images/gallery/image-35.jpg')}}" alt="" />
                                         </a>
                                         <div class="caption">
                                             <h2>Skewers of meat</h2>
@@ -758,7 +697,7 @@
                                     <div class="img-box adv-img adv-img-half-content" data-anima="fade-left" data-trigger="hover">
                                         <i class="fa fa-camera-retro anima"></i>
                                         <a href="javascript:void(0);" class="img-box lightbox anima-scale-up anima">
-                                            <img src="{{asset('assets/images/gallery/image-36.jpg')}}" alt="" />
+                                            <img src="{{asset('storage/images/gallery/image-36.jpg')}}" alt="" />
                                         </a>
                                         <div class="caption">
                                             <h2>Pork beef</h2>
