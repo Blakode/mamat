@@ -1,8 +1,12 @@
-- load all pages for all products 
-- set up db for user, relating with the order 
-- set up end point for blog 
-- 
-- set up endpoints for user login & logout sessions 
--collect user info in the order table
-- use slug for category, make slug airtight using the auth function in the kicthen controller
-- category can be updated & it'll be used to call content from db 
+- tables & relationships 
+- seed data
+- load pages with seeded data 
+- auth (client & admin)
+- upload products 
+- process order and it's states 
+
+- avatar : generate image for user after profile creation 
+
+
+-  contribute in a project 
+
