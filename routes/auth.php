@@ -35,6 +35,7 @@ Route::post('/forgot-password', [PasswordResetLinkController::class, 'store'])
 Route::get('/reset-password/{token}', [NewPasswordController::class, 'create'])
                 ->middleware('guest')
                 ->name('password.reset');
+                // 
 
 Route::post('/reset-password', [NewPasswordController::class, 'store'])
                 ->middleware('guest')
@@ -59,6 +60,11 @@ Route::get('/confirm-password', [ConfirmablePasswordController::class, 'show'])
 Route::post('/confirm-password', [ConfirmablePasswordController::class, 'store'])
                 ->middleware('auth');
 
-Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
-                ->middleware('auth')
-                ->name('logout');
+
+Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])
+->middleware('auth')
+->name('logout'); 
+
+// Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+//                 ->middleware('auth')
+//                 ->name('logout');

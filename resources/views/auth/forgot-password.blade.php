@@ -1,36 +1,49 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('layouts.frontend.main_app')
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+@section('bg-banner')
+    <br/>
+    <br/>
+    
+@endsection
+@section('section')
+    <div class="section-empty section-item text-center">
+        <div class="container content">
+            <h5 class="text-bold" class="text-center">Forgotten your password ? </h5>
+            <hr class="space m" />
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6">
+                    <form action="" class="form-box form-ajax" method="post">
+                        <div class="row">
+                            
+                            <hr class="space s" />
+                            <div class="col-md-12">
+                                <p>Email</p>
+                                <input id="email" name="email" placeholder="Email..." type="email" class="form-control form-value" required>
+                            </div>
+                            <hr class="space s" />
+
+                            <hr class="space s" />
+                                <button class="btn-sm btn" type="submit">Email Reset Link</button>
+                        </div>
+                    
+                        <div class="success-box">
+                            <div class="alert alert-success">Congratulations. Your message has been sent successfully</div>
+                        </div>
+                        <div class="error-box">
+                            <div class="alert alert-warning">Error, please retry. Your message has not been sent</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
+           
+      
+            <div class="title-base title-small doc-title">
+                <i class="fa fa-angle-up scroll-top"></i>
+            </div>
         </div>
-
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('password.email') }}">
-            @csrf
-
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Email Password Reset Link') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+    </div>
+@endsection
