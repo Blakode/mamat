@@ -8,8 +8,6 @@
 @section('section')
 
      <!-- Validation Errors -->
-
- 
     <div class="section-empty section-item text-center">
         <div class="container content">
             <h5 class="text-bold" class="text-center">Login</h5>
