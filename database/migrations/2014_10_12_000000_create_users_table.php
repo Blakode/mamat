@@ -17,14 +17,14 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->enum('role',['admin','user','sadmin']);
-            $table->enum('gender',['male','female','Rather not say']);
-            $table->string('avatar');
+            $table->enum('role',['admin','user','sadmin'])->default('user');
+            $table->enum('gender',['male','female','rather not say']);
+            $table->string('avatar')->nullable();
+            $table->string('phone')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('phone');
-            $table->timestamps();
             $table->rememberToken();
+            $table->timestamps();
             
         });
     }

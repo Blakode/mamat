@@ -31,7 +31,6 @@ class ProductFactory extends Factory
             'category' => rand(0,1)?'food': 'drink',
             'qty' => rand(1,10),
             'amount' => $this->faker->randomNumber(3),
-            'order_note' => $this->faker->sentence(9,true)
         ];
     }
 }

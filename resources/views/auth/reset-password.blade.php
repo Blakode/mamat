@@ -14,9 +14,10 @@
                 <div class="col-md-3">
                 </div>
                 <div class="col-md-6">
-                    <form action="" class="form-box form-ajax" method="post">
-                        <div class="row">
-                            
+                    <form action="{{url('reset-password')}}" class="form-box form-ajax" method="post">
+                        @csrf
+
+                        <div class="row">    
                             <hr class="space s" />
                             <div class="col-md-12">
                                 <p>Email</p>
@@ -35,14 +36,7 @@
                                 <input id="password" name="password" placeholder="verify-password..." type="password" class="form-control form-value" required>
                             </div>
                             <hr class="space s" />
-                                <button class="btn-sm btn" type="submit">Login</button>
-                        </div>
-                    
-                        <div class="success-box">
-                            <div class="alert alert-success">Congratulations. Your message has been sent successfully</div>
-                        </div>
-                        <div class="error-box">
-                            <div class="alert alert-warning">Error, please retry. Your message has not been sent</div>
+                                <button class="btn-sm btn" type="submit">Reset Password</button>
                         </div>
                     </form>
                 </div>

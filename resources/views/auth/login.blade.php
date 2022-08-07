@@ -23,7 +23,7 @@
                             <hr class="space s" />
                             <div class="col-md-12">
                                 <label>Email</label><span style="color:#ff0000">*</span>
-                                <input id="email" name="email" value="{{ old('email', $user->email) }}"  placeholder="Email..." type="email" class="form-control form-value @error('title') is-invalid required @enderror" required autocomplete="title" autofocus>
+                                <input id="email" name="email" value="{{ old('email', $user->email) }}"  placeholder="Email..." type="email" class="form-control form-value @error('email') is-invalid required @enderror" required autocomplete="email" autofocus>
                                 @error('email')
                                 <span class="invalid-feedback is-invalid " role="alert">
                                     <strong>{{ $message }}</strong>
@@ -43,14 +43,14 @@
                                 @enderror
                             </div>
                             <hr class="space s" />
+                            <div class="col-md-3">
+                                <input type="checkbox" name="remember_me">Remember Me
+                            </div>
+                            <div class="col-md-9">
+                               <a href="forgot-password" style="color: #ff0000">Forgot Your Password ?</a>
+                            </div>
+                            <hr class="space s" />
                                 <button class="btn-sm btn" type="submit">login</button>
-                        </div>
-                    
-                        <div class="success-box">
-                            <div class="alert alert-success">Congratulations. Your message has been sent successfully</div>
-                        </div>
-                        <div class="error-box">
-                            <div class="alert alert-warning">Error, please retry. Your message has not been sent</div>
                         </div>
                     </form>
                 </div>

@@ -30,24 +30,6 @@
                             </div>
                             <hr class="space s" />
 
-                            @if (Auth::user())
-
-                                @if ($user->role == 'sadmin')
-                                <div class="col-md-12">
-                                    <p>Account Type</p>
-                                    <select name="role" id="category" class="form-control form-value" required >
-                                        <option >--</option>
-                                        <option value="food">vendor</option>
-                                        <option value="drink">rider</option>
-                                    </select>
-                                </div>
-                                @endif       
-
-                            @else
-                            
-                            @endif
-
-                            <input type="hidden" name='role' value="user" required>
                             <input type="hidden" name='avatar' value="assets/images/gallery/avatar.png" required>
                             
                             <div class="col-md-6">
