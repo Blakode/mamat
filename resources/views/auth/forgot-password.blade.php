@@ -14,7 +14,8 @@
                 <div class="col-md-3">
                 </div>
                 <div class="col-md-6">
-                    <form action="" class="form-box form-ajax" method="post">
+                    <form action="forgot-password" class="form-box form-ajax" method="post">
+                        @csrf
                         <div class="row">
                             
                             <hr class="space s" />

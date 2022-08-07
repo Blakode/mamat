@@ -31,18 +31,22 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
+    
+     /*
+    --------------------------------------------------------------------
+    Fields Empty for production
+    'first_name' => 'required|string|max:255',
+    'last_name' =>  'required|string|max:255',
+    --------------------------------------------------------------------
+    */
     public function store(Request $request)
     {
-        
         $request->validate([
-            
-            'first_name' => 'required|string|max:255',
-            'last_name' =>  'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'gender' => 'required|string|max:255',
-            'avatar' => 'required|string|max:255',
-            'phone' => 'required|numeric|digits:11', 
+            'avatar' => 'string|max:255|nullable',
+            'phone' => 'numeric|digits:11|nullable', 
             'role' => 'required',
         ]);
 

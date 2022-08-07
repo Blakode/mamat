@@ -22,6 +22,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
+-----------------------------------------------------------------
+| create group for route that needs login to be accessed 
+-----------------------------------------------------------------
+*/
 Route::get('/', [ProductController::class, 'index' ]);
 
 Route::resource('/products',ProductController::class,
@@ -35,7 +40,7 @@ Route::resource('/products',ProductController::class,
             'store' => 'product.store',
             'destroy' => 'product.destroy'
         ]
-    ]);
+    ])->middleware(['auth', 'verified']);
 
 
 Route::get('/user',[ UserController::class, 'show']);
