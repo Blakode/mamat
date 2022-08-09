@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\user;
 
-use App\Models\Order;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -14,10 +14,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::paginate(10);
-        return view('order.index')->with([
-            'orders' => $orders,
-        ]); 
+        //
     }
 
     /**
@@ -49,7 +46,7 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        return view('order.show');
+        //
     }
 
     /**

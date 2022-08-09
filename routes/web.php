@@ -3,7 +3,6 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\KitchenController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
@@ -27,6 +26,9 @@ use Illuminate\Support\Facades\Route;
 | create group for route that needs login to be accessed 
 -----------------------------------------------------------------
 */
+
+// Route::resource('users', App\Http\Controllers\UserController::class);
+
 Route::get('/', [ProductController::class, 'index' ]);
 
 Route::resource('/products',ProductController::class,
@@ -41,7 +43,6 @@ Route::resource('/products',ProductController::class,
             'destroy' => 'product.destroy'
         ]
     ])->middleware(['auth', 'verified']);
-
 
 Route::get('/user',[ UserController::class, 'show']);
 
@@ -58,7 +59,7 @@ Route::get('/user',[ UserController::class, 'show']);
         ]
 ]);
 
-Route::resource('/orders',OrderController::class,
+Route::resource('/orders', App\Http\Controllers\user\OrderController::class,
 [
     'as' => 'prefix',
         'names' => [
@@ -84,8 +85,6 @@ Route::resource('/transactions',TransactionController::class,
         ]
 ]);
 
-// product controller 
-// Route::get('kitchen/{slug}', [KitchenController::class, 'index']); 
 Route::get('menu/{slug}', [MenuController::class, 'index']); 
 Route::get('about/{slug}', [AboutController::class, 'index']);
 Route::get('contact/{slug}', [ContactController::class, 'index']);
