@@ -23,12 +23,9 @@ use Illuminate\Support\Facades\Route;
 
 /*
 -----------------------------------------------------------------
-| create group for route that needs login to be accessed 
+|  add new comment here 
 -----------------------------------------------------------------
 */
-
-// Route::resource('users', App\Http\Controllers\UserController::class);
-
 Route::get('/', [ProductController::class, 'index' ]);
 
 Route::resource('/products',ProductController::class,
@@ -84,6 +81,23 @@ Route::resource('/transactions',TransactionController::class,
             'destroy' => 'transaction.destroy'
         ]
 ]);
+
+/*
+-----------------------------------------------------------------
+| Auth Dashboard Routes
+-----------------------------------------------------------------
+*/
+
+Route::group([
+    'middleware' => 'auth',
+    'name' => 'dashboard',
+], function(){
+
+    Route::get('/dashboard', [App\Http\Controllers\user\DashboardController::class, 'index']);
+    Route::get('/dashboard', [App\Http\Controllers\admin\DashboardController::class, 'index']);
+    Route::get('/dashboard', [App\Http\Controllers\sadmin\DashboardController::class, 'index']);
+
+});
 
 Route::get('menu/{slug}', [MenuController::class, 'index']); 
 Route::get('about/{slug}', [AboutController::class, 'index']);
