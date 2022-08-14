@@ -3,7 +3,6 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\KitchenController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
@@ -24,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 /*
 -----------------------------------------------------------------
-| create group for route that needs login to be accessed 
+|  add new comment here 
 -----------------------------------------------------------------
 */
 Route::get('/', [ProductController::class, 'index' ]);
@@ -42,7 +41,6 @@ Route::resource('/products',ProductController::class,
         ]
     ])->middleware(['auth', 'verified']);
 
-
 Route::get('/user',[ UserController::class, 'show']);
 
     Route::resource('/users',UserController::class,
@@ -58,7 +56,7 @@ Route::get('/user',[ UserController::class, 'show']);
         ]
 ]);
 
-Route::resource('/orders',OrderController::class,
+Route::resource('/orders', App\Http\Controllers\user\OrderController::class,
 [
     'as' => 'prefix',
         'names' => [
@@ -84,8 +82,23 @@ Route::resource('/transactions',TransactionController::class,
         ]
 ]);
 
-// product controller 
-// Route::get('kitchen/{slug}', [KitchenController::class, 'index']); 
+/*
+-----------------------------------------------------------------
+| Auth Dashboard Routes
+-----------------------------------------------------------------
+*/
+
+Route::group([
+    'middleware' => 'auth',
+    'name' => 'dashboard',
+], function(){
+
+    Route::get('/dashboard', [App\Http\Controllers\user\DashboardController::class, 'index']);
+    Route::get('/dashboard', [App\Http\Controllers\admin\DashboardController::class, 'index']);
+    Route::get('/dashboard', [App\Http\Controllers\sadmin\DashboardController::class, 'index']);
+
+});
+
 Route::get('menu/{slug}', [MenuController::class, 'index']); 
 Route::get('about/{slug}', [AboutController::class, 'index']);
 Route::get('contact/{slug}', [ContactController::class, 'index']);
