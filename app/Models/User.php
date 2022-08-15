@@ -11,6 +11,7 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable;
 
+    protected const IS_ADMIN = 1;
     /**
      * The attributes that are mass assignable.
      *
@@ -43,9 +44,12 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-    ]; 
-
-
+    ];
+/* 
+---------------------------------------------------------------------
+| The relationship for the user model
+---------------------------------------------------------------------
+*/
         public function transaction()
         {
             return $this->hasMany(Transaction::class);
@@ -65,5 +69,11 @@ class User extends Authenticatable implements MustVerifyEmail
         {
             return $this->hasMany((Products::class));
         }
+
+/* 
+---------------------------------------------------------------------
+| The Middleware methods for the user model 
+---------------------------------------------------------------------
+*/
 
 }

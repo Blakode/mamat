@@ -47,7 +47,7 @@ class RegisteredUserController extends Controller
             'gender' => 'required|string|max:255',
             'avatar' => 'string|max:255|nullable',
             'phone' => 'numeric|digits:11|nullable', 
-            'role' => 'required',
+            'role' => 'string|max:255',
         ]);
 
         //concatenate name field
@@ -56,7 +56,7 @@ class RegisteredUserController extends Controller
         $user = User::create([
             'name' => $name,
             'email' => $request->email,
-            'role' => $request->role,
+            'role' => $request->input('role', 'user'),
             'gender' => $request->gender,
             'avatar' => $request->avatar, 
             'password' => Hash::make($request->password),

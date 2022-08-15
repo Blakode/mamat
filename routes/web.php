@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
@@ -23,25 +22,88 @@ use Illuminate\Support\Facades\Route;
 
 /*
 -----------------------------------------------------------------
-|  add new comment here 
+| group route by as roles & endpoint prefixs 
 -----------------------------------------------------------------
 */
 Route::get('/', [ProductController::class, 'index' ]);
 
-Route::resource('/products',ProductController::class,
-    [
-     'as' => 'prefix', 
-        'names' => [
-            'index' => '/',
-            'create' => 'product.create', 
+/*
+-----------------------------------------------------------------
+| Guest Users
+-----------------------------------------------------------------
+*/
+Route::resource('/products', ProductController::class, [
+    'as' => 'products.',
+    'prefix' => 'products', 
+    'names' => [
             'show' => 'product.show', 
-            'edit' => 'product.edit',
-            'store' => 'product.store',
-            'destroy' => 'product.destroy'
+            'index' => '/',
         ]
-    ])->middleware(['auth', 'verified']);
+     ])->only('index','show');
 
-Route::get('/user',[ UserController::class, 'show']);
+/*k
+-----------------------------------------------------------------
+| Authenticated Users
+-----------------------------------------------------------------
+*/
+    Route::group(['middleware' => 'auth'], function()
+    {
+
+/*
+-----------------------------------------------------------------
+| Authenticated && Verfied Users
+-----------------------------------------------------------------
+*/
+        Route::group([
+            // 'middleware' => ['verified', ],
+        ], function() {
+
+             /*
+            -----------------------------------------------------------------
+            | Authenticated && Verfied super Admin [sadmin]
+            -----------------------------------------------------------------
+            */
+            Route::group([
+                'middleware' => ['is_sadmin', ], 
+                'prefix' => 'admin',
+                'as' => 'admin.'
+                ], function() {
+                    Route::get('/dashboard', [App\Http\Controllers\sadmin\DashboardController::class, 'index']);
+            });
+
+            /*
+            -----------------------------------------------------------------
+            | Authenticated && Verfied Admin
+            -----------------------------------------------------------------
+            */
+            Route::group([
+                'middleware' => ['is_admin', ], 
+                'prefix' => 'admin',
+                'as' => 'admin.'
+                ], function() {
+                    Route::get('/dashboard', [App\Http\Controllers\admin\DashboardController::class, 'index']);
+            });
+
+            /*
+            -----------------------------------------------------------------
+            | Authenticated && Verfied User
+            -----------------------------------------------------------------
+            */
+            Route::group([
+                'middleware' => ['is_user', ], 
+                'prefix' => 'user',
+                'as' => 'user.'
+                ], function() {
+                    Route::get('/dashboard', [App\Http\Controllers\user\DashboardController::class, 'index']);
+            });
+
+        }); 
+
+        
+        // Route::get('/dashboard', [App\Http\Controllers\admin\DashboardController::class, 'index']);
+        // Route::get('/dashboard', [App\Http\Controllers\sadmin\DashboardController::class, 'index']);
+    }); 
+
 
     Route::resource('/users',UserController::class,
 [
@@ -87,17 +149,6 @@ Route::resource('/transactions',TransactionController::class,
 | Auth Dashboard Routes
 -----------------------------------------------------------------
 */
-
-Route::group([
-    'middleware' => 'auth',
-    'name' => 'dashboard',
-], function(){
-
-    Route::get('/dashboard', [App\Http\Controllers\user\DashboardController::class, 'index']);
-    Route::get('/dashboard', [App\Http\Controllers\admin\DashboardController::class, 'index']);
-    Route::get('/dashboard', [App\Http\Controllers\sadmin\DashboardController::class, 'index']);
-
-});
 
 Route::get('menu/{slug}', [MenuController::class, 'index']); 
 Route::get('about/{slug}', [AboutController::class, 'index']);
