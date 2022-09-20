@@ -34,7 +34,7 @@
                         <div class="img-box"><img src="../../../images/gallery/image-2.jpg" alt=""></div>
                     </div>
                     <div class="col-md-8">
-                        <h3>Order Details</h3>
+                        <h3>Transaction Details</h3>
                         <hr class="anima">
                         
                             <ul class="list-texts text-left list-texts-justified">
@@ -44,7 +44,7 @@
                                 <li><b>Architect:</b>   <span>Jason & Perry</span></li>
                             </ul>
                         
-                        <a class="btn btn-xs" href="content-box.html#">Show Order</a>
+                        <a class="btn btn-xs" href="content-box.html#">Show Transactions</a>
                     </div>
                 </div>
             </div>

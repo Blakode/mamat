@@ -41,7 +41,7 @@ Route::resource('/products', ProductController::class, [
         ]
      ])->only('index','show');
 
-/*k
+/*
 -----------------------------------------------------------------
 | Authenticated Users
 -----------------------------------------------------------------
@@ -65,11 +65,11 @@ Route::resource('/products', ProductController::class, [
             */
             Route::group([
                 'middleware' => ['is_sadmin', ], 
-                'prefix' => 'admin',
-                'as' => 'admin.'
-                ], function() {
+                'prefix' => 'sadmin',
+                'as' => 'sadmin.'
+                ], function() {   
                     Route::get('/dashboard', [App\Http\Controllers\sadmin\DashboardController::class, 'index']);
-            });
+                            });
 
             /*
             -----------------------------------------------------------------
@@ -82,7 +82,7 @@ Route::resource('/products', ProductController::class, [
                 'as' => 'admin.'
                 ], function() {
                     Route::get('/dashboard', [App\Http\Controllers\admin\DashboardController::class, 'index']);
-            });
+                                });
 
             /*
             -----------------------------------------------------------------
@@ -99,11 +99,9 @@ Route::resource('/products', ProductController::class, [
 
         }); 
 
-        
         // Route::get('/dashboard', [App\Http\Controllers\admin\DashboardController::class, 'index']);
         // Route::get('/dashboard', [App\Http\Controllers\sadmin\DashboardController::class, 'index']);
     }); 
-
 
     Route::resource('/users',UserController::class,
 [

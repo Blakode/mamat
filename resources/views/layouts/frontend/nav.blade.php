@@ -95,22 +95,38 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="/login">Login</a></li>
                                     <li><a href="/register">Sign-up</a></li>
+                                    <li><a href="/login">Just Checkout</a></li>
+                                    {{-- NEED FIX:: create endpoint to create tempory account just to checkout --}}
                                 </ul>
                             </li>
                         </ul>
                     @endguest
-                    @auth
+
+                @auth
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button"> <span class="im-cap-smiley text-l"></span> </a>
                             <ul class="dropdown-menu">
-                                <li><a href="/login">Profile</a></li>
-                                <li><a href="/dashboard">DashBoard</a></li>
-                                <li><a href="/register">Admin DashBoard</a></li>
+
+                                @can('user_access')
+                                <li><a href="/user/dashboard">Profile</a></li>
+                                <li><a href="/order">Order</a></li>
+                                @endcan
+
+                                @can('admin_access')
+                                    <li><a href="/admin/dashboard">Dashboard</a></li>
+                                    <li><a href="/orders">Orders</a></li>
+                                @endcan
+
+                                @can('sadmin_access')
+                                <li><a href="/sadmin/dashboard">Dashboard</a></li>
+                                <li><a href="/dashboard">Orders</a></li>
+                                @endcan
+
                                 <li><a href="/logout">logout</a></li>
                             </ul>
                         </li>
                     </ul>
-                    @endauth
+                @endauth
                     
 
                     {{-- generate space for the nav bar   --}}
