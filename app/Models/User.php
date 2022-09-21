@@ -9,23 +9,29 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
+
     use HasFactory, Notifiable;
 
-    protected const IS_ADMIN = 1;
+
+    protected const IS_USER = 1;
+    protected const IS_ADMIN = 2;
+    protected const IS_SADMIN = 3;
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [
-        'role',
-        'name',
-        'email',
-        'avatar',
-        'phone',
-        'gender',
-        'password',
-    ];
+
+        protected $fillable = [
+            'role',
+            'name',
+            'email',
+            'avatar',
+            'phone',
+            'gender',
+            'password',
+        ];
 
     /**
      * The attributes that should be hidden for arrays.

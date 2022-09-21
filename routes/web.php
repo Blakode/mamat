@@ -41,7 +41,7 @@ Route::resource('/products', ProductController::class, [
         ]
      ])->only('index','show');
 
-/*k
+/*
 -----------------------------------------------------------------
 | Authenticated Users
 -----------------------------------------------------------------
@@ -55,9 +55,22 @@ Route::resource('/products', ProductController::class, [
 -----------------------------------------------------------------
 */
         Route::group([
-            // 'middleware' => ['verified', ],
-        ], function() {
+            'middleware' => ['is_user', ],
+        ], function() 
+        {
 
+            Route::resource('/orders', App\Http\Controllers\user\OrderController::class,
+            [
+                'as' => 'prefix',
+                    'names' => [
+                        'index' => '/order',
+                        'create' => 'order.create', 
+                        'show' => 'order.show',
+                        'edit' => 'order.edit',
+                        'store' => 'order.store',
+                        'destroy' => 'order.destroy'
+                    ]
+            ]);
              /*
             -----------------------------------------------------------------
             | Authenticated && Verfied super Admin [sadmin]
@@ -65,11 +78,11 @@ Route::resource('/products', ProductController::class, [
             */
             Route::group([
                 'middleware' => ['is_sadmin', ], 
-                'prefix' => 'admin',
-                'as' => 'admin.'
-                ], function() {
+                'prefix' => 'sadmin',
+                'as' => 'sadmin.'
+                ], function() {   
                     Route::get('/dashboard', [App\Http\Controllers\sadmin\DashboardController::class, 'index']);
-            });
+                            });
 
             /*
             -----------------------------------------------------------------
@@ -82,7 +95,7 @@ Route::resource('/products', ProductController::class, [
                 'as' => 'admin.'
                 ], function() {
                     Route::get('/dashboard', [App\Http\Controllers\admin\DashboardController::class, 'index']);
-            });
+                                });
 
             /*
             -----------------------------------------------------------------
@@ -99,11 +112,9 @@ Route::resource('/products', ProductController::class, [
 
         }); 
 
-        
         // Route::get('/dashboard', [App\Http\Controllers\admin\DashboardController::class, 'index']);
         // Route::get('/dashboard', [App\Http\Controllers\sadmin\DashboardController::class, 'index']);
     }); 
-
 
     Route::resource('/users',UserController::class,
 [
@@ -115,19 +126,6 @@ Route::resource('/products', ProductController::class, [
             'edit' => 'user.edit',
             'store' => 'user.store',
             'destroy' => 'user.destroy'
-        ]
-]);
-
-Route::resource('/orders', App\Http\Controllers\user\OrderController::class,
-[
-    'as' => 'prefix',
-        'names' => [
-            'index' => '/order',
-            'create' => 'order.create', 
-            'show' => 'order.show',
-            'edit' => 'order.edit',
-            'store' => 'order.store',
-            'destroy' => 'order.destroy'
         ]
 ]);
 
