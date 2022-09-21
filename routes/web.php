@@ -55,9 +55,22 @@ Route::resource('/products', ProductController::class, [
 -----------------------------------------------------------------
 */
         Route::group([
-            // 'middleware' => ['verified', ],
-        ], function() {
+            'middleware' => ['is_user', ],
+        ], function() 
+        {
 
+            Route::resource('/orders', App\Http\Controllers\user\OrderController::class,
+            [
+                'as' => 'prefix',
+                    'names' => [
+                        'index' => '/order',
+                        'create' => 'order.create', 
+                        'show' => 'order.show',
+                        'edit' => 'order.edit',
+                        'store' => 'order.store',
+                        'destroy' => 'order.destroy'
+                    ]
+            ]);
              /*
             -----------------------------------------------------------------
             | Authenticated && Verfied super Admin [sadmin]
@@ -113,19 +126,6 @@ Route::resource('/products', ProductController::class, [
             'edit' => 'user.edit',
             'store' => 'user.store',
             'destroy' => 'user.destroy'
-        ]
-]);
-
-Route::resource('/orders', App\Http\Controllers\user\OrderController::class,
-[
-    'as' => 'prefix',
-        'names' => [
-            'index' => '/order',
-            'create' => 'order.create', 
-            'show' => 'order.show',
-            'edit' => 'order.edit',
-            'store' => 'order.store',
-            'destroy' => 'order.destroy'
         ]
 ]);
 
